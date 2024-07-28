@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .scroll
+    {
+    max-height: 400px;
+    overflow-y: auto;
+    }
+    .fix
+     {
+ width:15%;
+ position: fixed;
+ top:100px;
+ bottom:0px;
+ right:0px;
+ left:0px;
+}
+
+</style>
+<div class="row">
+    <div class="h1 text-center py-4"><i class="fa fa-coffee "></i> <b>T</b><b style="color:red;">-News</b>
+    <hr style="height:3px;width:8%;margin:0px auto;color:red;">
+    </div>
+    <div class="col-sm-2">
+        <ul class="list-group">
+            <li class="list-group-item active bg-danger" aria-current="true">News Category</li>
+            {% if c %}
+            {% for x in c %}
+            <a style="text-decoration:none;" href="/user/vnews?abc={{x.id}}">
+                <li class="list-group-item">{{x.cname}}</li>
+            </a>
+            {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+    <div class="col-sm-8">
+        {% if n %}
+        {% for a in n %}
+        <div class="card mb-4" style="max-width:100%">
+            <div class="row g-0 scroll">
+                <div class="col-md-4">
+                    <img src="/{{a.newspic}}" class="img-fluid rounded-start w-100" alt="...">
+                    <p class="card-text"><small class="text-muted">Date :{{a.ndate}} || City :{{a.city}}</small></p>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body bg-light">
+                        <h5 class="card-text h4">{{a.ncategory}}</h5>
+                        <p class="card-title h5">{{a.headlines}}</p>
+                        <p class="card-text">{{a.subjects}}</p>
+                        <p class="card-text">{{a.newsdes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

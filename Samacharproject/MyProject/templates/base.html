@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css'%}" rel="stylesheet"/>
+    <link href="{% static 'css/all.css'%}" rel="stylesheet"/>
+    <style>
+        .header
+        {
+        min-height:80px;
+        text-align:center;
+        border-top:5px solid red ;
+        }
+        .ic
+        {
+        color:red;
+        border:1px solid red;
+        height:25px;
+        width:25px;
+        padding-top:3px;
+        }
+        .ic:hover
+        {
+        background:red;
+        color:white;
+        transition:all ease 1s;
+        transform:rotate(360deg);
+        }
+        .menu
+        {
+        min-height:55px;
+        }
+        #menu ul li a
+        {
+        color:white;
+        }
+        #menu ul li a:hover
+        {
+        color:red;
+        background:silver;
+        border-radius:15px;
+        transition:all ease .5s;
+        }
+        .category
+        {
+        min-height:200px;
+        }
+        .newcategory
+        {
+        min-height:500px;
+        background:;
+        }
+        .services
+        {
+        min-height:500px;
+
+        }
+        .ufooter
+        {
+        min-height:300px;
+        background:#212529;
+        }
+        .bfooter
+        {
+        min-height:45px;
+        background:#212529;
+        margin-top:1px;
+        }
+        .im:hover
+        {
+        transform:scale(1.1);
+        transition:all ease .5s;
+        }
+        .offer
+        {
+        min-height:400px;
+        }
+        .ufp
+        {
+        padding:150px;
+        }
+        a
+        {
+        color:black;
+        text-decoration:none;
+        }
+        .anc
+        {
+        text-decoration:none;
+        color:white;
+        }
+        .anc:hover
+        {
+        color:white;
+        }
+        a:hover
+        {
+        text-decoration:underline;
+        color:black;
+        }
+        .bna:hover
+        {
+        text-decoration:none;
+        color:#5284bb;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header bg-light">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3 fs-2 py-2">
+                    <b style="color:red ">VOICE</b><b> OF INDIA <i class="fa fa-newspaper-o"></i></b>
+                </div>
+                <div class="col-sm-6 fs-5 pt-4">Country’s Most Vibrant Newspage</div>
+                <div class="col-sm-3 py-4">
+                    <i class="fab fa-twitter ic"></i>
+                    <i class="fab fa-facebook ic"></i>
+                    <i class="fab fa-whatsapp ic"></i>
+                    <i class="fab fa-youtube ic"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+    <div class="row menu bg-dark">
+        <!--start menu-->
+
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" style="padding-left:10%">
+                    <nav class="navbar navbar-expand-lg navbar-light" id="menu">
+                        <div class="container-fluid">
+
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="/user/home"><i
+                                                class="fa fa-home"></i> Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/about"><i class="fa fa-info"></i> About Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/viewnews"><i class="fa fa-newspaper-o"></i> News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/vnews"><i class="fa fa-coffee"></i>T-News</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/videos"><i class="fa fa-video-camera"></i>
+                                            Videos</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/user/contactus"><i class="fa fa-phone"></i> Contact
+                                            Us</a>
+                                    </li>
+                                    <!--<li class="nav-item">
+                                        <a class="nav-link" href="/user/login/"><i class="fa fa-user"></i> Signin</a>
+                                    </li>-->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/admin/"><i class="fa fa-user"></i> Admin</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+
+        <!--end menu-->
+
+    </div>
+    <div class="row">
+        <div class="col-sm-2 bg-danger pt-2 text-center"
+             style="color:white;font-size:20px;border-radius:0px 10px 50px 0px; "><b>Breaking</b> <b
+                style="color:navy;">News</b></div>
+        <div class="col-sm-10 pt-2 bg-light">
+            <marquee onmouseover="stop()" onmouseleave="start()">
+            {% if brnews %}
+            {% for x in brnews %}
+                <!--<div class="bn-news fs-4" style="left: 82px; right: 90px;color:black;"></div>-->
+                <a href="/user/viewmore?ayz={{x.id}}" class="bna">{{x.bn}}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |=|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {% endfor %}
+            {% endif %}
+                </marquee>
+        </div>
+    </div>
+</div>
+
+<div class="row content">
+    <div class="col-sm-12 ">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
+
+<div class="row ufooter">
+
+    <div class="col-sm-4 text-satisfy text-light py-5 ufp">
+        <a class="anc" href="/user/about/">About</a><br/><br/>
+        <a class="anc" href="#">voiceofindia018@gmail.com</a><br/><br/>
+        <a class="anc" href="#">+91-7071769965</a><br/><br/>
+
+    </div>
+
+    <div class="col-sm-4 text-light text-satisfy py-5 ufp">
+        <a class="anc" href="#">Copyright Policy</a><br/><br/>
+        <a class="anc" href="#">Terms</a><br/><br/>
+        <a class="anc" href="#">Privacy Policy</a><br/><br/>
+        <a class="anc" href="#">Sitemap</a><br/><br/>
+    </div>
+    <div class="col-sm-4 pt-5 text-center">
+        <div class=" fs-2 py-3">
+            <b style="color:red ">VOICE</b><b style="color:white;"> OF INDIA <i class="fa fa-newspaper-o"></i></b>
+        </div>
+        <p class="btn text-light" style="border:2px solid white; border-radius:25px"><i class="fa fa-language"></i>
+            Language </p><br/><br/>
+    </div>
+    <div class="row text-center text-light">
+        <div class="col-sm-8">&copy; 2021 Cursus All Right Reserved</div>
+        <div class="col-sm-4">
+            <i class="fab fa-facebook"> </i>
+            <i class="fab fa-twitter"> </i>
+            <i class="fab fa-google-plus"> </i>
+            <i class="fab fa-linkedin"> </i>
+            <i class="fab fa-instagram"> </i>
+            <i class="fab fa-youtube"> </i>
+            <i class="fab fa-pinterest"> </i>
+        </div>
+    </div>
+</div>
+<div class="row bfooter text-light text-center py-2">
+    <div class="col-sm-6">Developed By: Himanshu Gupta</div>
+    <div class="col-sm-6">&copy; Voice Of India Pvt. Ltd.</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+<div class="col-sm-1"></div>
+    {% if data %}
+    {% for x in data %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.headlines}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.newspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+
+     {% if tdata %}
+    {% for x in tdata %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.tnheadlines}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.tnpick}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if trdata %}
+    {% for x in trdata %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.tsheadlines}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.tspick}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if tren %}
+    {% for x in tren %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.ft}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.newspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if bne %}
+    {% for x in bne %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.bn}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.newspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if fc %}
+    {% for x in fc %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fdate}} || City :{{x.fcity}}</p>
+         <p class="h1">{{x.fheadlines}}</p><br/>
+        <b>{{x.fsubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.fpick}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fdate}} || City :{{x.fcity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.fnewsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if sc %}
+    {% for x in sc %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.sdate}} || City :{{x.scity}}</p>
+         <p class="h1">{{x.sheadlines}}</p><br/>
+        <b>{{x.ssubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.snewspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.sdate}} || City :{{x.scity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.snewsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if tc %}
+    {% for x in tc %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.tdate}} || City :{{x.tcity}}</p>
+         <p class="h1">{{x.theadlines}}</p><br/>
+        <b>{{x.tsubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.tnewspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.tdate}} || City :{{x.tcity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.tnewsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if foc %}
+    {% for x in foc %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fodate}} || City :{{x.focity}}</p>
+         <p class="h1">{{x.foheadlines}}</p><br/>
+        <b>{{x.fosubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.fonewspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fodate}} || City :{{x.focity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.fonewsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if fic %}
+    {% for x in fic %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fidate}} || City :{{x.ficity}}</p>
+         <p class="h1">{{x.fiheadlines}}</p><br/>
+        <b>{{x.fisubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.finewspic}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.fidate}} || City :{{x.ficity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.finewsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if hnew %}
+    {% for x in hnew %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.sheadlines}}</p><br/>
+        <b>{{x.subject}}</b><br/>
+        <div class="col-sm-12 py-3">
+            <img src="/{{x.spick}}" class="img-thumbnail w-100"/>
+        </div>
+        <div class="col-sm-12 py-5 border">
+        <p class="card-text text-muted">Date :{{x.ndate}} || City :{{x.city}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.newsdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+    {% if vid %}
+    {% for x in vid %}
+<div class="col-sm-10 bg-light p-5">
+    <div class="row py-3">
+         <div class="h4">{{x.ncategory}}</div>
+        <p class="card-text text-muted">Date :{{x.vdate}} || City :{{x.city}}</p>
+         <p class="h1">{{x.vheadlines}}</p><br/>
+        <b>{{x.tsubject}}</b><br/>
+        <div class="col-sm-12 py-3">
+              <iframe height="700" width="100%"
+                            src="{{x.vlink}}">
+                    </iframe>
+        </div>
+        <div class="col-sm-12 py-5 border">
+             <div class="h4">{{x.vcategory}}</div>
+        <p class="card-text text-muted">Date :{{x.tdate}} || City :{{x.tcity}}</p>
+            <p class="h5 text-justify p-5" style="text-align:justify;">{{x.vdes}}</p>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+    {% endif %}
+
+
+
+<div class="col-sm-1"></div>
+</div>
+
+{% endblock %}

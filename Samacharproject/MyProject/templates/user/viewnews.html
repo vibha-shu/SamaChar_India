@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    .cityb:hover
+    {
+    background:wheat;
+    text-decoration:none;
+    }
+</style>
+<div class="row news pt-1 bg-light">
+    <div class="h2 text-center py-3"><b>Top</b> <b style="color:red;">News <i class="fa fa-flash"></i></b><hr style="height:3px;width:6%;margin:0px auto;color:red;"></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row">
+            <div class="col-sm-6">
+                {% if tnews %}
+                {% for a in tnews %}
+                <img src="/{{a.tnpick}}" width="100%" height="400" class="d-block w-100"/>
+                <div class="h4 pt-2"><a href="/user/viewmore?xyz={{a.id}}">{{a.tnheadlines}}</a><br/><br/></div>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <div class="col-sm-6">
+                {% if tsnews %}
+                {% for x in tsnews %}
+                <div class="row py-1">
+                    <div class="col-sm-4">
+                        <img src="/{{x.tspick}}" height="100px" width="180px" class="d-block img-fluid w-100"/>
+                    </div>
+                    <div class="col-sm-8"><a href="/user/viewmore?abc={{x.id}}">{{x.tsheadlines}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-1">
+    </div>
+</div>
+<div class="row allnews">
+    <div class="h2 text-center py-5"><b>Latest</b><b style="color:red;"> News <i class="fa fa-hand-o-down"></i></b><hr style="height:3px;width:6%;margin:0px auto;color:red;"></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 border">
+        <div class="row india">
+            {% if news %}
+            {% for x in news %}
+            <div class="col-sm-4 py-3">
+                <h2 style="width:65%">{{x.ncategory}}</h2>
+              <div class="card" style="width:auto;">
+                    <img src="/{{x.newspic}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <a href="/user/viewmore?msg={{x.id}}">  <p class="h4">{{x.headlines}}</p>
+                            {{x.subject}}<br/></a>
+                        <b>Posted Date : </b>{{x.ndate}}
+                        <b>City :</b> {{x.city}}
+                    </div>
+               </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}
